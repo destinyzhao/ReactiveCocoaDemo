@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController">
+            <connections>
+                <outlet property="accountField" destination="EmZ-w3-Zb1" id="2HH-t1-5eh"/>
+                <outlet property="loginBtn" destination="kdV-hN-Abj" id="OUG-pY-0rV"/>
+                <outlet property="pwdField" destination="vfL-Ze-Dvf" id="SBe-Rr-pch"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NQQ-8L-Oqc">
+                    <rect key="frame" x="10" y="74" width="394" height="90"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户名：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kca-QX-bE0">
+                            <rect key="frame" x="15" y="8" width="58" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密码：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubo-Rd-F71">
+                            <rect key="frame" x="15" y="52" width="43" height="17"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EmZ-w3-Zb1">
+                            <rect key="frame" x="81" y="-0.5" width="287" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vfL-Ze-Dvf">
+                            <rect key="frame" x="81" y="43.5" width="287" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="EmZ-w3-Zb1" firstAttribute="centerY" secondItem="Kca-QX-bE0" secondAttribute="centerY" id="29W-tB-rz6"/>
+                        <constraint firstItem="Kca-QX-bE0" firstAttribute="leading" secondItem="NQQ-8L-Oqc" secondAttribute="leading" constant="15" id="5LS-vi-e21"/>
+                        <constraint firstItem="vfL-Ze-Dvf" firstAttribute="centerY" secondItem="ubo-Rd-F71" secondAttribute="centerY" id="781-5b-xRs"/>
+                        <constraint firstItem="vfL-Ze-Dvf" firstAttribute="leading" secondItem="EmZ-w3-Zb1" secondAttribute="leading" id="L8Z-NG-5MS"/>
+                        <constraint firstAttribute="trailing" secondItem="EmZ-w3-Zb1" secondAttribute="trailing" constant="26" id="NmM-Xo-DZf"/>
+                        <constraint firstItem="EmZ-w3-Zb1" firstAttribute="leading" secondItem="Kca-QX-bE0" secondAttribute="trailing" constant="8" id="QPC-MH-gL4"/>
+                        <constraint firstItem="Kca-QX-bE0" firstAttribute="top" secondItem="NQQ-8L-Oqc" secondAttribute="top" constant="8" id="SEh-bV-WT3"/>
+                        <constraint firstAttribute="height" constant="90" id="ZuW-Uf-Pim"/>
+                        <constraint firstItem="ubo-Rd-F71" firstAttribute="top" secondItem="Kca-QX-bE0" secondAttribute="bottom" constant="27" id="eZt-e6-bhK"/>
+                        <constraint firstItem="vfL-Ze-Dvf" firstAttribute="trailing" secondItem="EmZ-w3-Zb1" secondAttribute="trailing" id="kUG-QN-IcG"/>
+                        <constraint firstItem="ubo-Rd-F71" firstAttribute="leading" secondItem="NQQ-8L-Oqc" secondAttribute="leading" constant="15" id="uIt-nO-43M"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kdV-hN-Abj">
+                    <rect key="frame" x="20" y="184" width="374" height="40"/>
+                    <color key="backgroundColor" red="0.64313725489999995" green="0.81176470590000005" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="bqs-by-sIK"/>
+                    </constraints>
+                    <state key="normal" title="登录"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="NQQ-8L-Oqc" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="30" id="JHg-Vk-FtG"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="NQQ-8L-Oqc" secondAttribute="trailing" constant="10" id="LaR-hB-6zM"/>
+                <constraint firstItem="kdV-hN-Abj" firstAttribute="top" secondItem="NQQ-8L-Oqc" secondAttribute="bottom" constant="20" id="SWA-hr-RxB"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="kdV-hN-Abj" secondAttribute="trailing" constant="20" id="cDT-fG-m7L"/>
+                <constraint firstItem="kdV-hN-Abj" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="jba-Z0-5Vv"/>
+                <constraint firstItem="NQQ-8L-Oqc" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="10" id="qcE-mC-dPA"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="137.68115942028987" y="105.80357142857143"/>
+        </view>
+    </objects>
+</document>

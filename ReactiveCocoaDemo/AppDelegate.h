@@ -2,15 +2,13 @@
 //  AppDelegate.h
 //  ReactiveCocoaDemo
 //
-//  Created by Alex on 16/3/10.
-//  Copyright © 2016年 Alex. All rights reserved.
+//  Created by Destiny on 2020/7/13.
+//  Copyright © 2020 Destiny. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
-
-@property (strong, nonatomic) UIWindow *window;
 
 
 @end

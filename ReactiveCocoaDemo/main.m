@@ -2,15 +2,18 @@
 //  main.m
 //  ReactiveCocoaDemo
 //
-//  Created by Alex on 16/3/10.
-//  Copyright © 2016年 Alex. All rights reserved.
+//  Created by Destiny on 2020/7/13.
+//  Copyright © 2020 Destiny. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
 
 int main(int argc, char * argv[]) {
+    NSString * appDelegateClassName;
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
+        // Setup code that might create autoreleased objects goes here.
+        appDelegateClassName = NSStringFromClass([AppDelegate class]);
     }
+    return UIApplicationMain(argc, argv, nil, appDelegateClassName);
 }

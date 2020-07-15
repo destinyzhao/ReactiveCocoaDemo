@@ -2,67 +2,84 @@
 //  ViewController.m
 //  ReactiveCocoaDemo
 //
-//  Created by Alex on 16/3/10.
-//  Copyright © 2016年 Alex. All rights reserved.
+//  Created by Destiny on 2020/7/13.
+//  Copyright © 2020 Destiny. All rights reserved.
 //
 
 #import "ViewController.h"
-#import <ReactiveCocoa/ReactiveCocoa.h>
-#import "LoginViewModel.h"
+#import "UIButtonViewController.h"
+#import "TextFieldViewController.h"
+#import "LoginViewController.h"
 
-@interface ViewController ()
+@interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
-
-@property (nonatomic, strong) LoginViewModel *loginViewModel;
-
-@property (weak, nonatomic) IBOutlet UITextField *accountField;
-@property (weak, nonatomic) IBOutlet UITextField *pwdField;
-
-@property (weak, nonatomic) IBOutlet UIButton *submitButton;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSArray *dataArray;
 
 @end
 
 @implementation ViewController
 
-
-- (LoginViewModel *)loginViewModel
-{
-    if (_loginViewModel == nil) {
-        
-        _loginViewModel = [[LoginViewModel alloc] init];
-    }
-    return _loginViewModel;
-}
-
-// 视图模型绑定
-- (void)bindModel
-{
-    // 给模型的属性绑定信号
-    // 只要账号文本框一改变，就会给account赋值
-    RAC(self.loginViewModel.account, account) = _accountField.rac_textSignal;
-    RAC(self.loginViewModel.account, pwd) = _pwdField.rac_textSignal;
-    
-    // 绑定登录按钮
-    RAC(self.submitButton,enabled) = self.loginViewModel.enableLoginSignal;
-    
-    // 监听登录按钮点击
-    [[_submitButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-        
-        // 执行登录事件
-        [self.loginViewModel.LoginCommand execute:nil];
-    }];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    // Do any additional setup after loading the view.
     
-    [self bindModel];
+    self.dataArray = @[@"UIButton",@"TextFieldChange",@"登录"];
+    [self.tableView reloadData];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.dataArray.count;
 }
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSString *cellIdentifier = @"";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
+    cell.textLabel.text = self.dataArray[indexPath.row];
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 44.f;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    switch (indexPath.row) {
+        case 0:
+            [self gotoUIButton];
+            break;
+        case 1:
+            [self gotoTextField];
+            break;
+        case 2:
+            [self gotoLogin];
+            break;
+            
+        default:
+            break;
+    }
+}
+
+- (void)gotoUIButton{
+    UIButtonViewController *vc = [[UIButtonViewController alloc] initWithNibName:@"UIButtonViewController" bundle:[NSBundle mainBundle]];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+
+- (void)gotoTextField{
+    TextFieldViewController *vc = [[TextFieldViewController alloc] initWithNibName:@"TextFieldViewController" bundle:[NSBundle mainBundle]];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)gotoLogin{
+    LoginViewController *vc = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:[NSBundle mainBundle]];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+
+
 
 @end
